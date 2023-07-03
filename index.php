@@ -10,17 +10,17 @@ include "includes/navigation.php";
 
             <!-- Blog Entries Column -->
             <div class="col-md-8">
-<?php 
+              <?php 
 ////// COUNT PAGES FOR PAGINATION and the maths//////////
-if (isset($_GET['page'])) {
-    $page= $_GET['page'];
-}else{$page= "";}
+        if (isset($_GET['page'])) {
+            $page= $_GET['page'];
+             }else{$page= "";}
 
-if ($page=="" || $page==1) {
-   $page_1 = 0;
-}else{
-$page_1 = ($page * 2)-2; 
-}
+        if ($page=="" || $page==1) {
+            $page_1 = 0;
+            }else{
+            $page_1 = ($page * 2)-2; 
+        }
 
 
 if (isset($_SESSION['user_role']) && is_admin($_SESSION['username'])) {
@@ -58,14 +58,14 @@ if (isset($_SESSION['user_role']) && is_admin($_SESSION['username'])) {
                $post_content= $row['post_content'];
              ?>
 
-<h2 class="page-header">POSTS</h2>
+      <h2 class="page-header">POST</h2>
 
                 <!-- First Blog Post -->
                 <h2>
-                    <a href="post.php?p_id=<?php echo $post_id;?>"><?php echo $post_title?></a>
+                    Title Name:  <a href="post.php?p_id=<?php echo $post_id;?>"><?php echo strtoupper($post_title);?></a>
                 </h2>
                 <p class="lead">
-                    by <a href="author_posts.php?author=<?php echo $post_author;?>&p_id=<?php echo $post_id;?>"> <?php echo $post_author?></a>
+                   Written by <a href="author_posts.php?author=<?php echo $post_author;?>&p_id=<?php echo $post_id;?>"> <?php echo strtoupper($post_author);?></a>
                 </p>
                 <p><span class="glyphicon glyphicon-time"></span><?php echo $post_date?></p>
                 <hr>
@@ -73,29 +73,24 @@ if (isset($_SESSION['user_role']) && is_admin($_SESSION['username'])) {
                 <hr>
                 <p><?php echo $post_content?></p>
                 <a class="btn btn-primary" href="post.php?p_id=<?php echo $post_id;?>">Read More <span class="glyphicon glyphicon-chevron-right"></span></a>
-
-
-           <?php  }} ?>
-
+           <?php  } } ?>
                
                 <hr>
-
                 <!-- Pager -->
                 <ul class="pager">
-
-<?php 
+      <?php 
 
 /// loop to display all the pages///
-for ($i=1; $i <= $post_count; $i++) { 
-   if($i==$page) {
-    echo "<li><a class='active_link' href='index.php?page={$i}'>{$i}</a></li>";
-   }else{
-    echo "<li><a style='background-color:#ff9999' href='index.php?page={$i}'>{$i}</a></li>";
-   }
- 
-}
+    for ($i=1; $i <= $post_count; $i++) { 
+        if($i==$page) {
+            echo "<li><a class='active_link' href='index.php?page={$i}'>{$i}</a></li>";
+           }else{
+            echo "<li><a style='background-color:#ff9999' href='index.php?page={$i}'>{$i}</a></li>";
+        }
+    
+     }
 
-?>
+  ?>
 
 
                     <!-- <li class="previous">
@@ -114,5 +109,5 @@ for ($i=1; $i <= $post_count; $i++) {
         <!-- /.row -->
 
         <hr>
-        <?php include "includes/footer.php";?>
+    <?php include "includes/footer.php";?>
        

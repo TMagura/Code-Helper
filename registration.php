@@ -32,9 +32,9 @@
  if (isset($_POST['submit'])) {
     if(!empty($_POST['username']) && !empty($_POST['email']) && !empty($_POST['password'])){
 
-   $username= mysqli_real_escape_string($connection,$_POST['username']);
-   $email= mysqli_real_escape_string($connection,$_POST['email']);
-   $password= mysqli_real_escape_string($connection,$_POST['password']);
+   $username = mysqli_real_escape_string($connection,$_POST['username']);
+   $email    = mysqli_real_escape_string($connection,$_POST['email']);
+   $password = mysqli_real_escape_string($connection,$_POST['password']);
 
    $username =trim($username);
    $email    =trim($email);
@@ -127,10 +127,9 @@ else {
                             <label for="username" class="sr-only">username</label>
                             <input type="text" name="username" id="username" class="form-control" placeholder="<?php echo _USERNAME;?>"
                             autocomplete="on"
-<--to show previously entered data we put the value=the inserted previous data-->
-                            value="<?php echo isset($username) ? $username :''?>"
+                            value="<?php echo isset($username) ? $username :''?>">
                             
-                            >
+                            <!--to show previously entered data we put the value to be the inserted previous data--> 
                         </div>
                          <div class="form-group">
                             <label for="email" class="sr-only">Email</label>

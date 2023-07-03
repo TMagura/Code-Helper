@@ -14,8 +14,8 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <h1 class="page-header text-primary">
-                            WELCOME TO ADMIN PANEL
-                            <small class="text-warning"><?php echo $_SESSION['username'];?></small>
+                            COMMENTS PANEL
+                            <small class="text-warning"><?php echo strtoupper($_SESSION['username']);?></small>
                         </h1>
 
                     </div>
@@ -23,24 +23,23 @@
                 <!-- /.row -->
 
 
-<!-- this will call the view all post function -->
-<?php 
-if(isset($_GET['source'])){
-$source=$_GET['source'];
-}else{$source="";}
-switch ($source) {
-    case 'add_post' :
-       include "includes/add_posts.php" ;
-        break;
-    case 'edit_post':
-        include "includes/edit_posts.php" ;
-        break;
-    default:
-        include "includes/view_all_comments.php";
-        break;
-}
-?>
-
+        <!-- this will call the view all post function -->
+    <?php 
+     if(isset($_GET['source'])){
+        $source=$_GET['source'];
+           }else{$source="";}
+            switch ($source) {
+             case 'add_post' :
+            include "includes/add_posts.php" ;
+                break;
+            case 'edit_post':
+                include "includes/edit_posts.php" ;
+                break;
+            default:
+                include "includes/view_all_comments.php";
+                break;
+            }
+     ?>
 
             </div>
             <!-- /.container-fluid -->

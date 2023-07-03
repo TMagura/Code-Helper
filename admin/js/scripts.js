@@ -1,45 +1,32 @@
 
-$(document).ready(function(){
+		$(document).ready(function(){
+			$('#selectAllBoxes').click(function(event){
 
+			if(this.checked) {
 
-	$('#selectAllBoxes').click(function(event){
+			$('.checkBoxes').each(function(){
 
-	if(this.checked) {
+				this.checked = true;
+			});
+		  } 
+	       else {
+			$('.checkBoxes').each(function(){
 
-	$('.checkBoxes').each(function(){
+			this.checked = false;
 
-	    this.checked = true;
+			   });
+			  }
+			});
+		});
 
-	});
+		//make users appear to be online after evry refresh automatically
+			function loadUsersOnline(){
+			$.get("functions.php?onlineusers=result",function(data){
 
-} 
-
-else {
-
-
-	$('.checkBoxes').each(function(){
-
-	    this.checked = false;
-
-	});
-
-
-	}
-
-	});
-
-
-
-});
-
-function loadUsersOnline(){
-$.get("functions.php?onlineusers=result",function(data){
-
-	$(".useronline").text(data);
-});
-
-} 
-setInterval(function() {
-	loadUsersOnline();
-}, 500);
+				$(".onlineusers").text(data);
+			});
+		} 
+			setInterval(function() {
+				loadUsersOnline();
+		}, 500); 
 

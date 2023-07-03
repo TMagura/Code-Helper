@@ -7,12 +7,11 @@
     USERS TABLE
 </h1>
 <div class="col-lg-6">
-<table class="table table-hover">
+<table class="table table-hover" style="background-color: white;">
     <thead>
         <tr>
             <th>ID</th>
             <th>Username</th>
-            <th>Password</th>
             <th>Firstname</th>
             <th>Lastname</th>
             <th>Email</th>
@@ -39,7 +38,6 @@ $user_role= $row['user_role'];
  echo "<tr>";
  echo "<td>{$user_id}</td>";
  echo "<td>{$username}</td>";
- echo "<td>{$user_password}</td>";
  echo "<td>{$user_firstname}</td>";
  echo "<td>{$user_lastname}</td>";
  echo "<td>{$user_email}</td>";

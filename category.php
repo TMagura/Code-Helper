@@ -85,24 +85,10 @@ while (mysqli_stmt_fetch($stmt_result)) {
    <?php  } ?>
      
                 <hr>
-
-                <!-- Pager -->
-                <ul class="pager">
-                    <li class="previous">
-                        <a href="#">&larr; Older</a>
-                    </li>
-                    <li class="next">
-                        <a href="#">Newer &rarr;</a>
-                    </li>
-                </ul>
-
             </div>
-
             <?php include "includes/sidebar.php";?>
-
         </div>
         <!-- /.row -->
-
-        <hr>
-        <?php include "includes/footer.php";?>
+    <hr>
+<?php include "includes/footer.php";?>
        

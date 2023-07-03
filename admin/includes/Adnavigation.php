@@ -25,8 +25,7 @@
       echo $_SESSION['username'];
     }
     
-    ?>
-                    
+    ?>                   
                     <b class="caret"></b></a>
                     <ul class="dropdown-menu">
                         <li>
