@@ -10,9 +10,9 @@
             $update_categories_query = mysqli_query($connection,$query_update);
         
         while ($row = mysqli_fetch_assoc($update_categories_query)) {
-        $cat_title = $row['cat_title']; 
-        $cat_id= $row['cat_id'];
-        echo "<input value = '{$cat_title}' type='text' class='form-control' name='cat_title'>";
+            $cat_title = $row['cat_title']; 
+            $cat_id= $row['cat_id'];
+          echo "<input value = '{$cat_title}' type='text' class='form-control' name='cat_title'>";
          }
         } ?>
 
@@ -28,17 +28,20 @@ if(isset($_POST['update']) && !empty($_POST['cat_title'])){
     mysqli_stmt_execute($stmt);
 
     if(!$stmt){
-        die('DIED QUERY'.mysqli_error($connection)); 
-    }
-    header("Location:categories.php");
-    }elseif(isset($_POST['update']) && empty($_POST['cat_title'])) {
-        echo "fill in the textbox";
-    }
+            die('DIED QUERY'.mysqli_error($connection)); 
+        }
+          header("Location:categories.php");
+        }elseif(isset($_POST['update']) && empty($_POST['cat_title'])) {
+            echo '  <div class="alert alert-danger alert-dismissible">
+            <button type="button" class="close" data-dismiss="alert">&times;</button>
+            <strong>Warning!</strong> The field can not be empty.
+            </div>';
+        }
 
 ?>
     </div>
-    <div class="form-group">
-        <input class="btn btn-primary" type="submit" name="update" value="Update category">
-    </div>
+        <div class="form-group">
+            <input class="btn btn-primary" type="submit" name="update" value="Update category">
+        </div>
 </form>
 

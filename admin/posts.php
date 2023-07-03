@@ -14,9 +14,8 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <h1 class="page-header text-primary">
-                            WELCOME TO ADMIN PANEL
-                          
-                            <small class="text-warning"><?php echo $_SESSION['username'];?></small>
+                            POSTS PANEL                        
+                            <small class="text-warning"><?php echo strtoupper($_SESSION['username']);?></small>
                         </h1>
 
                     </div>
