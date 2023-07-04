@@ -10,9 +10,8 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
-                </button>
-            
-                <a class="navbar-brand" href="index.php">CODE HELPER</a>
+                </button>           
+               <a class="navbar-brand" href="index.php">CODE HELPER</a>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
@@ -20,21 +19,21 @@
                 <ul class="nav navbar-nav">
 
             <?php 
-            $query = "SELECT * FROM categories";
-            $select_all_categories_query= mysqli_query($connection,$query);
-            while ($row = mysqli_fetch_assoc($select_all_categories_query)) {
-                $cat_id=$row['cat_id'];
-               $cat_title= $row['cat_title'];
+                    $query = "SELECT * FROM categories";
+                    $select_all_categories_query= mysqli_query($connection,$query);
+                while ($row = mysqli_fetch_assoc($select_all_categories_query)) {
+                    $cat_id=$row['cat_id'];
+                    $cat_title= $row['cat_title'];
 
-               ///// MAKE LINKS ACTIVE ////////
-            $pageName = basename($_SERVER['PHP_SELF']);//this saves the actual page name
-            $classCategory="";
-            $registration="registration.php";
-            $classRegistration="";
-            $contactUs="contact.php";
-            $classContactUs="";
-            $classLogin="";
-            $Login="login.php";
+                ///// MAKE LINKS ACTIVE ////////
+                $pageName = basename($_SERVER['PHP_SELF']);//this saves the actual page name
+                $classCategory="";
+                $registration="registration.php";
+                $classRegistration="";
+                $contactUs="contact.php";
+                $classContactUs="";
+                $classLogin="";
+                $Login="login.php";
 
         if(isset($_GET['category']) && $_GET['category'] == $cat_id){
             $classCategory="active";
@@ -53,27 +52,25 @@
             # code...
             break;
          }
-// elseif ($pageName=$registration) {
-//     $classRegistration="active";
-// }elseif ($pageName=$contactUs) {
-//     $classContactUs="active";
-// }
       
      echo "<li class='{$classCategory}'><a href='category.php?category={$cat_id}'>{$cat_title}</a></li>    
      ";
- }
+      }
          ?>               
             <?php if(isloggedIn()):?>
 
                 <li>
                     <a href="admin/index.php">ADMIN</a>
                 </li>
+
                 <li class=" <?php echo $classContactUs;?>">
                     <a href="contact.php">Contact Us</a>
                 </li>
+
                 <li class=" <?php echo $classLogin;?>">
                 <a href="includes/logout.php">Log Out</a>
                 </li>
+
             <?php else: ?>
 
                 <li class=" <?php echo $classRegistration;?>">
@@ -87,7 +84,7 @@
       <?php 
  
 
-            if (isset($_SESSION['user_role']) && $_SESSION['user_role'] ==='admin'){
+        if (isset($_SESSION['user_role']) && $_SESSION['user_role'] ==='admin'){
             if (isset($_GET['p_id'])) {
             $post_id=$_GET['p_id'];
             echo "
