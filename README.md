@@ -4,4 +4,3 @@ Project Description: Its a web based content management system which helps indiv
 
 To Run the System: Use/import the database file with the .sql extension into your database application (used MYSQL Database).
 
-Credits: Thanks to Edwin Diaz and Teebag Gucks for the mentorship lastly myself for the commitment and dedication to come up with this CMS.
